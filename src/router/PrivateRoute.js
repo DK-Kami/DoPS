@@ -9,16 +9,14 @@ function PrivateRoute({ component: Component, isAuth, ...rest }) {
     <Route
       {...rest}
       render={props =>
-        isAuth ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/login",
-              state: { from: props.location }
-            }}
-          />
-        )
+        isAuth
+          ? <Component isAuth={isAuth} {...props} />
+          : <Redirect
+              to={{
+                pathname: "/login",
+                state: { from: props.location }
+              }}
+            />
       }
     />
   );
