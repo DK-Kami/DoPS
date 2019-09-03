@@ -13,7 +13,7 @@ class RouterLayer extends React.Component {
     super(props);
 
     this.state = {
-      isAuth: false,
+      isAuth: true,
     };
 
     this.signIn = this.signIn.bind(this);
@@ -21,6 +21,7 @@ class RouterLayer extends React.Component {
   }
 
   signIn() {
+    console.log('da');
     this.setState({ isAuth: true });
   }
   logOut() {
@@ -32,13 +33,18 @@ class RouterLayer extends React.Component {
       <Router>
         <Switch>
           <Route
-            isAuth={this.state.isAuth}
-            component={LoginForm}
-            path="/login" />
+            path="/login"
+            render={() => (
+              <LoginForm
+                isAuth={this.state.isAuth}
+                signIn={this.signIn} />
+            )}
+            />
 
           <PrivateRoute
             isAuth={this.state.isAuth}
             component={UserLayout}
+            logOut={this.logOut}
             path="/" />
         </Switch>
       </Router>

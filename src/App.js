@@ -2,11 +2,11 @@ import React from 'react';
 import './styles/App.css';
 import RouterLayer from './router';
 
-import Container from '@material-ui/core/Container';
+import { Container } from 'react-bootstrap';
 
 function App() {
   return (
-    <Container class="App">
+    <Container>
       <RouterLayer />
     </Container>
   );
