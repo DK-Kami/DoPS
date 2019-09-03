@@ -1,7 +1,8 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import { CardContent } from '@material-ui/core';
+import {
+  Row,
+  Col,
+} from 'react-bootstrap';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -11,29 +12,23 @@ class LoginForm extends React.Component {
       password: '',
       login: '',
     };
-
-    
   }
 
-  handleSignInClick() {
-
-  }
+  // componentWillMount() {
+  //   if (this.props.isAuth) {
+  //     window.history.pushState({}, '', '/');
+  //   }
+  // }
 
   render() {
     return (
-      <Grid
-        justify="center"
-        align="center"
-        container
-      >
-        <Grid item>
-          <Card>
-            <CardContent>
-              nu da
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
+      <Row>
+        <Col>
+          <button onClick={this.props.signIn}>
+            da
+          </button>
+        </Col>
+      </Row>
     )
   }
 };
