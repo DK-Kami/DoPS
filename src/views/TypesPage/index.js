@@ -1,4 +1,5 @@
 import React from 'react';
+import { Grid } from '@material-ui/core';
 
 class TypesPage extends React.Component {
   constructor(props) {
@@ -7,22 +8,11 @@ class TypesPage extends React.Component {
 
   render() {
     return (
-      <div>
-        da
-        da
-        da
-        da
-        da
-        da
-        da
-        da
-        da
-        da
-        da
-        da
-        da
-        da
-      </div>
+      <Grid container>
+        <Grid item>
+          da
+        </Grid>
+      </Grid>
     )
   }
 };

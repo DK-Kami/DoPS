@@ -36,7 +36,7 @@ class UserLayout extends React.Component {
       <div>
         <ToolbarApp menu={menu} />
 
-        <div class="main--container">
+        <div className="main--container">
           <Switch>
             {menu.map(item => (
               <Route

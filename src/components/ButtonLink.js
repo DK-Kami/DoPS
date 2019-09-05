@@ -19,7 +19,7 @@ function ButtonLink(props) {
       color={
         !activeButton
         ? 'inherit'
-        : 'accent'
+        : 'default'
       }
       onClick={() => activeButton = redirectTo(url, isCurrentLink)}
     >
