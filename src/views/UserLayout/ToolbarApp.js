@@ -1,21 +1,31 @@
 import React from 'react';
 import {
+  Grid,
   AppBar,
   Toolbar,
   Typography,
 } from '@material-ui/core';
 import ButtonLink from '../../components/ButtonLink';
 
-
-function ToolbarApp() {
+function ToolbarApp(props) {
   return (
     <AppBar>
       <Toolbar>
-        <Typography variant="h6">DoSP</Typography>
+        <Grid
+          container
+          direction="row"
+          justify="space-between"
+        >
+          <Grid item>
+            <Typography variant="h6">DoSP</Typography>
+          </Grid>
 
-        <ButtonLink to="/act" title="Заключить акт" />
-        <ButtonLink to="/pact" title="Заключить пакт" />
-        <ButtonLink to="/create-patroul" title="Создать патруль" />
+          <Grid item >
+            {props.menu.map(item => (
+              <ButtonLink to={item.to} title={item.title} key={item.to} />
+            ))}
+          </Grid>
+        </Grid>
       </Toolbar>
     </AppBar>
   )
