@@ -1,13 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
+
+function redirectTo(link) {
+  window.history.pushState({}, '', `${link}`);
+}
 
 function ButtonLink(props) {
   return (
-    <Button color="inherit">
-      <Link to={`/${props.link || props.link}`} >
-        {props.title}
-      </Link>
+    <Button color="inherit" onClick={() => redirectTo(props.link || props.to)}>
+      {props.title} 
     </Button>
   )
 }
